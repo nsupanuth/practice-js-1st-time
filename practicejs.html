@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>test_js</title>
+
+    <style type="text/css">
+
+        .noalert{
+          width: 60%;
+          background-color: #00ff00;
+          display:none;
+        }
+
+        .alert{
+          width: 60%;
+          height: 50px;
+          background-color: #00ff00;
+        }
+
+        .test{
+
+          width: 100%;
+          background-color: black;
+          height: 200px;
+        }
+      
+    </style>
+
+
+  </head>
+
+  <body>
+
+  <script type="text/javascript">
+
+    function add(x,y){
+        return x+y;
+    }
+
+
+
+    function clickform() {
+      var name = document.getElementById("fname").value;      
+      var surname = document.getElementById("sname").value;
+      var email = document.getElementById("eemail").value;
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+      var ans = add(num1,num2);
+      alert(ans);
+      name = name.trim();
+      surname = surname.trim();
+      email = email.trim();
+
+      document.getElementById("rfname").innerHTML = name;
+      document.getElementById("rsurname").innerHTML = surname;
+      document.getElementById("remail").innerHTML = email;
+
+      if (document.getElementById("gender1").checked) {
+        document.getElementById("rgender").innerHTML = document.getElementById("gender1").value;
+      }
+      if (document.getElementById("gender2").checked) {
+        document.getElementById("rgender").innerHTML = document.getElementById("gender2").value;
+      }
+
+      if(name==""){
+        document.getElementById("result").textContent = "Error";
+        document.getElementById("result").className = "alert";
+        document.getElementById("fname").focus();
+      }
+    }
+
+
+  </script>
+
+<!--       <button onclick="myFunction()">Multiple</button> -->
+      <!--<p id="showresult"></p>-->
+
+      <button onclick="result()">Show value</button>
+      <div id="printresult"></div>
+
+    
+    <form method="POST" name = "test" onsubmit="return false;"> 
+
+      <div id = "result" class="noalert"> </div>
+
+      <table>
+        <tr>
+            <td>Name</td> <td><input type="text" name="name" id ="fname"> <div id = "rfname" style="backgroud-color:blue"></div></td> 
+        </tr>
+
+         <tr>
+            <td>Surname</td> <td><input type="text" name="surname" id = "sname"><div id="rsurname"></div></td> 
+        </tr>
+
+         <tr>
+            <td>Email</td> <td><input type="text" name="email" id="eemail"><div id="remail"></div></td> 
+        </tr>
+
+         <tr>
+            <td>num1</td> <td><input type="text" name="num1" id="num1"><div id="newnum1"></div></td> 
+        </tr>
+
+        <tr>
+            <td>num2</td> <td><input type="text" name="num2" id="num2"><div id="newnum2"></div></td> 
+        </tr>
+
+         <tr>
+            <td>Gender</td> <td><input type="radio" name="gender" value="Male" id ="gender1">Male
+                                <input type="radio" name="gender" value="Female" id = "gender2">Female
+                              <div id="rgender"></div>
+            </td> 
+        </tr>
+
+      <tr>
+        <td colspan="2">
+          <input type="submit" onclick="clickform()">
+        </td>
+      </tr>
+      </table>
+
+    </form>   
+
+
+
+    
+<button onclick="testalert()">Click</button>
+
+
+
+<script type="text/javascript">
+
+    function result(){
+
+        document.getElementById("printresult").innerHTML = myFunction();
+
+    }
+
+    function testalert(){
+       alert(myFunction());
+    }
+
+    function checkPalindrome(s){
+        var j ;
+        for(var i=0;i<s.length;i++,j--){
+
+        }
+
+    }
+
+    function myFunction(){
+        var num1 =  parseInt(document.getElementById("num1").value);
+        var num2 =  parseInt(document.getElementById("num2").value);
+        var ans = num1*num2;
+        document.getElementById("printresult").innerHTML = ans;
+        return ans;
+    }
+
+</script>
+
+  </body>
+</html>
